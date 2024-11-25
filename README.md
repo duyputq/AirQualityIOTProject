@@ -25,6 +25,12 @@ Output part:
 - Máy lọc không khí
 
 ## III. Nguyên lý hoạt động
+
+### Sơ đồ hệ thống
+
+![model](https://github.com/user-attachments/assets/84d56c6a-5ff0-4096-9e03-00bb6a224229)
+
+
 ### 1. Biến ngôn ngữ
 
 a. Nồng độ khí từ MQ2
