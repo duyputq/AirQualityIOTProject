@@ -1,20 +1,30 @@
 # Hệ thống giám sát chất lượng không khí
 
-## Giới thiệu
+## I. Giới thiệu
 Hệ thống giám sát chất lượng không khí là một giải pháp công nghệ nhằm đo lường, giám sát và phân tích mức độ ô nhiễm không khí. Hệ thống này sử dụng các cảm biến để theo dõi các thông số liên quan đến chất lượng không khí, như nồng độ bụi mịn (PM2.5, PM10), khí CO, và  nhiệt độ, độ ẩm.
 
-## Linh kiện
+## II. Linh kiện
 Input Part:
 - dht 11
+
+<img src="https://static.cytron.io/image/cache/catalog/products/SN-MQ2-MOD/MQ2%20(2)-min-800x800.jpg" width="200" height="200" />
+
+
 - mq2
+
+<img src="https://vn.szks-kuongshun.com/Content/upload/201884835/201811131511263384442.jpg" width="200" height="200" />
+
 - GP2Y1014AU
+
+<img src="https://m.media-amazon.com/images/I/51SE8WYO3DL.jpg" width="200" height="200" />
 
 Output part:
 - DC Motor (Fan)
+
 - 3 LED ứng với chất lượng không khí
 - Máy lọc không khí
 
-## Nguyên lý hoạt động
+## III. Nguyên lý hoạt động
 ### 1. Biến ngôn ngữ
 
 a. Nồng độ khí từ MQ2
@@ -57,7 +67,7 @@ Số liệu chất lượng không khí theo gian thực được theo dõi trê
 Bật quạt nếu CLKK xấu, bật cho đến khi các khí độc bị thổi đi.
 Còi Buzzer để cảnh báo chất lượng ko khí xấu.
 
-## Hình ảnh
+## IV. Mô hình thực tế
 ![fan-control](https://github.com/user-attachments/assets/c8246146-a865-4965-848c-4f46e3c95f59)
 
 ![devices](https://github.com/user-attachments/assets/eb823e1a-11c9-4831-a8c4-945aa29b8768)
