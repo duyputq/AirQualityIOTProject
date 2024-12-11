@@ -47,7 +47,7 @@ BLYNK_WRITE (V1)
     digitalWrite(dirMotorA, LOW);
   }
   else {
-    digitalWrite(pwmMotorA, 0);
+    digitalWrite(pwmMotorA, 0);///
     digitalWrite(dirMotorA, LOW);
   }
 }
