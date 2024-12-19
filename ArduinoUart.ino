@@ -70,7 +70,7 @@ void loop() {
 
   Serial.println(dustDensisty);
 
-  String Data = String(t,1) + ";" + String(h,1) + ";" + String(ppm,1) + ";" + String(dustDensisty,1)+ ";";
+  String Data = String(t,1) + ";" + String(h,1) + ";" + String(ppm,1) + ";" + String(dustDensisty,2)+ ";";
 
   mySerial.println(Data); 
   Serial.println(Data);

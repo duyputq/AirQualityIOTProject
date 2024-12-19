@@ -1,4 +1,7 @@
 #include <SoftwareSerial.h>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 #define BLYNK_PRINT Serial
 #define BLYNK_TEMPLATE_ID "TMPL6BX-eeWqf"
@@ -17,8 +20,14 @@ const int dirMotorA = D3;
 int motorSpeed = 100;
 int button;
 
-char ssid[] = "smarthome";
-char pass[] = "smarthome";
+//LED
+int LED = D5;
+int LED1 = D6;
+int LED2 = D7; 
+
+
+char ssid[] = "BM_HTVT";
+char pass[] = "bmhtvt2019";
 
 // Tạo một đối tượng espsoftwareserial với tốc độ baud là 9600
 SoftwareSerial mySerial(RX_PIN, TX_PIN);
@@ -44,6 +53,9 @@ void setup() {
 
   // Khởi tạo cổng nối tiếp phần mềm với tốc độ baud là 9600
   mySerial.begin(9600);
+  pinMode(LED, OUTPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
 
   // In ra thông báo khởi động
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
@@ -82,7 +94,27 @@ void loop() {
     Serial.println("Nong do CO: "+value3 +" ppm"); // In ra phần tử thứ 1
     Serial.println("Mat do bui min PM2.5: "+value4 + " ug/m3");
     // Serial.println(value4); // In ra chuỗi dữ liệu
-
-
+    double n3 = value3.toDouble();
+    double n4 = value4.toDouble();
+    if(n4 > 55.5){
+      digitalWrite(LED1, LOW);   // Tắt LED
+      digitalWrite(LED2, LOW);   // Tắt LED
+      digitalWrite(LED, HIGH);  // Bật LED do
+      digitalWrite(pwmMotorA, motorSpeed);
+      digitalWrite(dirMotorA, LOW);
+    } else if (n4 < 12 ){
+       digitalWrite(LED, LOW);   // Tắt LED
+       digitalWrite(LED1, LOW);   // Tắt LED
+      digitalWrite(LED2, HIGH);  // Bật LED xanh
+      if (button != 1){
+        digitalWrite(pwmMotorA, 0);
+        digitalWrite(dirMotorA, LOW);
+      }
+    } else {
+      digitalWrite(LED, LOW);   // Tắt LED
+      digitalWrite(LED2, LOW);   // Tắt LED
+      digitalWrite(LED1, HIGH);  // Bật LED vang
+    }
+  
   }
 }
