@@ -96,13 +96,13 @@ void loop() {
     // Serial.println(value4); // In ra chuỗi dữ liệu
     double n3 = value3.toDouble();
     double n4 = value4.toDouble();
-    if(n4 > 55.5){
+    if(n4 > 55.5 || n3 > 11){
       digitalWrite(LED1, LOW);   // Tắt LED
       digitalWrite(LED2, LOW);   // Tắt LED
       digitalWrite(LED, HIGH);  // Bật LED do
       digitalWrite(pwmMotorA, motorSpeed);
       digitalWrite(dirMotorA, LOW);
-    } else if (n4 < 12 ){
+    } else if (n4 < 12 || n3 < 4.4){
        digitalWrite(LED, LOW);   // Tắt LED
        digitalWrite(LED1, LOW);   // Tắt LED
       digitalWrite(LED2, HIGH);  // Bật LED xanh
