@@ -24,10 +24,10 @@ int button;
 int LED = D5;
 int LED1 = D6;
 int LED2 = D7; 
+s
 
-
-char ssid[] = "BM_HTVT";
-char pass[] = "bmhtvt2019";
+char ssid[] = "smarthome";
+char pass[] = "smarthome";
 
 // Tạo một đối tượng espsoftwareserial với tốc độ baud là 9600
 SoftwareSerial mySerial(RX_PIN, TX_PIN);
